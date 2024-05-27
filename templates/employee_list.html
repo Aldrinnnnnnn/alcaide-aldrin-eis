@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='bulma/bulma.css')}}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/employee.css')}}">
+</head>
+
+<body>
+  <div class="box1  has-text-white-bis  is-family-gregorian is-size-1 has-text-centered ">
+    Employee Information System</div>
+  <center>
+    <div class="box2">
+
+      <div class=" box2 grid ">
+        <table class="table is-bordered">
+          <tbody>
+
+            <tr>
+              <th class="is-danger">Employee</th>
+              <th class="is-danger">Last Name</th>
+              <th class="is-danger">First Name</th>
+              <th class="is-danger">Gender</th>
+            </tr>
+            <tr>
+              {% for employee in employees %}
+            <tr>
+              <td>{{ employee[0] }}</td>
+              <td>{{ employee[1] }}</td>
+              <td>{{ employee[2] }}</td>
+              <td>{{ employee[3] }}</td>
+              <td>{{ employee[4] }}</td>
+            </tr>
+            {% endfor %}
+            </tr>
+          </tbody>
+        </table>
+  </center>
+
+  <body>
+    <div class="container  has-text-black-bis is-family-monospace is-size-1 has-text-centered ">
+      Employee List</div>
+  </body>
+
+  <div class="relative">
+    <div class="box is-family-monospace ">Employee List</div>
+    <div class="box is-family-monospace">Personal Info</div>
+    <div class="box is-family-monospace">Education Info</div>
+    <div class="box is-family-monospace">Work Exp</div>
+    <div class="box is-family-monospace">Trainings</div>
+    <div class="box is-family-monospace">Logout</div>
+  </div>
+
+
+  </div>
+  </div>
+  </tbody>
+  </table>
+
+
+</body>
+
+</html>
