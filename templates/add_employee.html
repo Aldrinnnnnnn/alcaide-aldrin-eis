@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="static/bulma/bulma.css">
+  <link rel="stylesheet" href="static/css/add_employee.css">
+
+  <title>Add Employee</title>
+</head>
+
+<body>
+  <section class="hero is-fullheight">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-4">
+            <form action="add-employee" method="POST">
+              <h1 class="title is-3 has-text-centered">ADD EMPLOYEE</h1>
+              <div class="box has-background-link-light">
+                <div class="field">
+                  <label class="label">EMPLOYEE ID :</label>
+                  <div class="control">
+                    <input class="input" type="text" name="emp_id" required>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label class="label">LAST NAME:</label>
+                  <div class="control">
+                    <input class="input" type="text" name="lname" required>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label class="label">FIRST NAME:</label>
+                  <div class="control">
+                    <input class="input" type="text" name="fname" required>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label class="label">MIDDLE NAME :</label>
+                  <div class="control">
+                    <input class="input" type="text" name="mname" required>
+                  </div>
+                </div>
+
+                <div class="field is-grouped is-grouped-centered">
+                  <p class="control">
+                    <button class="button is-primary">ADD</button>
+                  </p>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+
+</html>

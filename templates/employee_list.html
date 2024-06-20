@@ -11,11 +11,19 @@
 </head>
 
 <body>
+  
+     {% if message!= "" %}
+     <div class="has-bg-danger messagebox">{{ message }}</div>
+     {% endif %}
+    </div>
+
   <div class="box1  has-text-white-bis  is-family-gregorian is-size-1 has-text-centered ">
-    Employee Information System</div>
+    Employee Information System
+  </div>
+
   <center>
     <div class="box2">
-
+      <a href="{{ url_for('add_form') }}" class="button is-small is-success">+Add Employee</a>
       <div class=" box2 grid ">
         <table class="table is-bordered">
           <tbody>
@@ -24,27 +32,30 @@
               <th class="is-danger">Employee</th>
               <th class="is-danger">Last Name</th>
               <th class="is-danger">First Name</th>
-              <th class="is-danger">Gender</th>
+              <th class="is-danger">Middle Name</th>
+              <th class="is-danger">Actions</th>
             </tr>
-            <tr>
-              {% for employee in employees %}
+            {% for employee in employees %}
             <tr>
               <td>{{ employee[0] }}</td>
               <td>{{ employee[1] }}</td>
               <td>{{ employee[2] }}</td>
               <td>{{ employee[3] }}</td>
-              <td>{{ employee[4] }}</td>
+              <td>
+                <a href="{{ url_for('update_employee', emp_id=employee[0]) }}" class="button is-small is-info">Update</a>
+                <a href="/delete-employee/{{ employee[0] }}" class="button is-small is-danger">Delete</a>
+              </td>
             </tr>
             {% endfor %}
-            </tr>
           </tbody>
         </table>
+      </div>
+    </div>
   </center>
 
-  <body>
-    <div class="container  has-text-black-bis is-family-monospace is-size-1 has-text-centered ">
-      Employee List</div>
-  </body>
+  <div class="container  has-text-black-bis is-family-monospace is-size-1 has-text-centered ">
+    Employee List
+  </div>
 
   <div class="relative">
     <div class="box is-family-monospace ">Employee List</div>
@@ -54,13 +65,6 @@
     <div class="box is-family-monospace">Trainings</div>
     <div class="box is-family-monospace">Logout</div>
   </div>
-
-
-  </div>
-  </div>
-  </tbody>
-  </table>
-
 
 </body>
 
